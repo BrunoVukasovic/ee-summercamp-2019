@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  LandingPage,
+  LandTours,
+  SeaTours,
+  Adventures,
+  Krka,
+  BlueCave
+} from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/land-tours" component={LandTours} />
+        <Route path="/sea-tours" component={SeaTours} />
+        <Route path="/adventures" component={Adventures} />
+        <Route path="/blue-cave" component={BlueCave} />
+        <Route path="/krka" component={Krka} />
+      </Switch>
+    </Router>
   );
 }
 
