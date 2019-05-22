@@ -5,8 +5,8 @@ import {
   Button,
   ButtonContainer,
   MainImage
-} from "../components";
-import mainImage from "../images/BlueCave16x9.jpg";
+} from "../../components";
+import mainImage from "../../images/BlueCave16x9.jpg";
 
 export default () => {
   return (

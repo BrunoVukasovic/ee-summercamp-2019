@@ -65,7 +65,7 @@ export default () => {
             <Link to="/adventures" className={styles.MobileLink}>
               Adventures
             </Link>
-            <Link to="/log-in" className={styles.MobileLink}>
+            <Link to="/my-trips" className={styles.MobileLink}>
               My Trips
             </Link>
             <Link to="/blog" className={styles.MobileLink}>
@@ -88,7 +88,7 @@ export default () => {
         </div>
 
         <div className={styles.logIn}>
-          <NavLink to="/log-in">My Trips</NavLink>
+          <NavLink to="/my-trips">My Trips</NavLink>
         </div>
 
         <div className={cn(styles.LandToursDropDown, styles.Dropdown)}>
