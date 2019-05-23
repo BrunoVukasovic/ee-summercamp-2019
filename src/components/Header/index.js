@@ -84,7 +84,7 @@ export default () => {
         </div>
 
         <div className={styles.TravelStories}>
-          <NavLink to="/land-tours">Land tours</NavLink>
+          <NavLink to="/users">Users</NavLink>
         </div>
 
         <div className={styles.logIn}>

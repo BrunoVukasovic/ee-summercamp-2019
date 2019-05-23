@@ -4,7 +4,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import { LandingPage, LandTours, SeaTours, Adventures, MyTrips } from "./pages";
+import {
+  LandingPage,
+  LandTours,
+  SeaTours,
+  Adventures,
+  MyTrips,
+  Users
+} from "./pages";
 import { Krka, BlueCave } from "./pages/trips";
 
 function App() {
@@ -19,6 +26,7 @@ function App() {
           <Route path="/blue-cave" component={BlueCave} />
           <Route path="/krka" component={Krka} />
           <Route path="/my-trips" component={MyTrips} />
+          <Route path="/users" component={Users} />
         </Switch>
       </Router>
     </Provider>
