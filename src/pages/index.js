@@ -4,3 +4,4 @@ export { default as SeaTours } from "./sea-tours";
 export { default as Adventures } from "./adventures";
 export { default as MyTrips } from "./my-trips";
 export { default as Users } from "./users";
+export { default as Register } from "./register";

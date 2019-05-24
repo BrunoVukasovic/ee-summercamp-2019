@@ -10,7 +10,8 @@ import {
   SeaTours,
   Adventures,
   MyTrips,
-  Users
+  Users,
+  Register
 } from "./pages";
 import { Krka, BlueCave } from "./pages/trips";
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/krka" component={Krka} />
           <Route path="/my-trips" component={MyTrips} />
           <Route path="/users" component={Users} />
+          <Route path="/register" component={Register} />
         </Switch>
       </Router>
     </Provider>

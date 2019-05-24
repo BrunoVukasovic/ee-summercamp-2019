@@ -1,13 +1,22 @@
 import React, { Component } from "react";
-import { Layout } from "../components";
 import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
+import { withRouter } from "react-router-dom";
 
 import { Spinner } from "../components";
-
+import { Layout } from "../components";
 class Users extends Component {
+  constructor() {
+    super();
+    this.routeChange = this.routeChange.bind(this);
+  }
+
+  routeChange() {
+    let path = `/register`;
+    this.props.history.push(path);
+  }
   render() {
     const { users } = this.props;
 
@@ -19,6 +28,9 @@ class Users extends Component {
             {users.map(user => (
               <p key={user.id}>Name: {user.firstName}</p>
             ))}
+          </div>
+          <div>
+            <button onClick={this.routeChange}>Register</button>
           </div>
         </Layout>
       );

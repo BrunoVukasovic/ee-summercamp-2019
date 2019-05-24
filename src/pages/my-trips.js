@@ -5,6 +5,8 @@ import { Layout } from "../components";
 
 import { getBookedTrips } from "../actions/tripActions";
 
+// obicni redux
+
 class MyTrips extends Component {
   componentDidMount() {
     this.props.getBookedTrips();
