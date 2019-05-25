@@ -14,7 +14,7 @@ export default () => {
       <MainImage src={mainImage} />
 
       <ButtonContainer>
-        <Button>Contact Us</Button>
+        <Button trip="Blue Cave">Contact Us</Button>
         <Button>Book Now</Button>
       </ButtonContainer>
       <h2>Blue Cave</h2>
