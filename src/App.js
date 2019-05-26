@@ -14,6 +14,7 @@ import {
   Register
 } from "./pages";
 import { Krka, BlueCave } from "./pages/trips";
+import Login from "./components/Private/Login";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/my-trips" component={MyTrips} />
           <Route path="/users" component={Users} />
           <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
         </Switch>
       </Router>
     </Provider>
