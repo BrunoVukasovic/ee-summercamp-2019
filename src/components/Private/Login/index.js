@@ -46,13 +46,20 @@ class Login extends Component {
     return (
       <Layout>
         <form className={styles.LoginForm} onSubmit={this.handleSubmit}>
-          <label>{this.state.message}</label>
+          <label className={styles.Label}>{this.state.message}</label>
+          <p className={styles.Hint}>
+            // HINT:
+            <br />
+            // email: admin@mail.com
+            <br />
+            // password: password
+          </p>
 
           <input
             autoFocus
             type="text"
             name="email"
-            className={styles.LoginForm__input}
+            className={styles.Input}
             placeholder="Your email address"
             onChange={this.onChange}
             value={this.state.email}
@@ -61,18 +68,19 @@ class Login extends Component {
           <input
             type="password"
             name="password"
-            className={styles.LoginForm__input}
+            className={styles.Input}
             placeholder="Your password"
             onChange={this.onChange}
             value={this.state.password}
           />
 
-          <input
-            type="submit"
-            className={styles.LoginForm__button}
-            value={"Login"}
-          />
+          <input type="submit" className={styles.Button} value={"Login"} />
         </form>
+
+        <div className={styles.Register}>
+          <label className={styles.Label}>Dont't have an account?</label>
+          <buton className={styles.Button}>Register</buton>
+        </div>
       </Layout>
     );
   }
