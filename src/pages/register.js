@@ -9,12 +9,11 @@ import styles from "../components/Button/Modal/styles.module.css";
 
 class Register extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    email: "",
-    bookedTrips: [{}],
-    wishlist: [{}]
+    clientName: "",
+    tripName: "",
+    slug: "",
+    date: "",
+    numberOfPeople: 0
   };
 
   onChange = e => {

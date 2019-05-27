@@ -113,15 +113,15 @@ class Header extends Component {
             </NavLink>
           </div>
           <div className={styles.TravelStories}>
-            <NavLink to="/users">Users</NavLink>
+            <NavLink to="/my-trips">My Trips</NavLink>
           </div>
           {isAuthenticated ? (
             <div className={styles.logIn} onClick={this.onLogoutClick}>
-              <NavLink to="/">My Trips/OUT</NavLink>
+              <NavLink to="/">LOG OUT</NavLink>
             </div>
           ) : (
             <div className={styles.logIn}>
-              <NavLink to="/login">My Trips/IN</NavLink>
+              <NavLink to="/login">LOG IN</NavLink>
             </div>
           )}
 

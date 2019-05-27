@@ -8,12 +8,6 @@ import { Link } from "react-router-dom";
 import { Spinner } from "../components";
 import { Layout } from "../components";
 class Users extends Component {
-  // onDeleteClick = clicledUser => {
-  //   const { firestore } = this.props;
-  //   firestore.delete({ collection: "users", doc: clicledUser.id });
-  // };
-  /* <button onClick={this.onDeleteClick(user)}>Delete</button> */
-
   render() {
     const { users } = this.props;
 
