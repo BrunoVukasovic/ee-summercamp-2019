@@ -15,7 +15,7 @@ export default () => {
 
       <ButtonContainer>
         <Button trip="Blue Cave">Contact Us</Button>
-        <Button>Book Now</Button>
+        <Button trip="Blue Cave">Book Now</Button>
       </ButtonContainer>
       <h2>Blue Cave</h2>
       <TripDescription>

@@ -24,7 +24,6 @@ class Button extends Component {
   }
 
   render() {
-    // if (this.props.children == "Contact Us") {
     return (
       <div>
         <button onClick={this.handleClick} className={styles.Button}>
@@ -63,9 +62,6 @@ class Button extends Component {
         ) : null}
       </div>
     );
-    // } else if (this.props.children == "Book Now") {
-    // return <BookNow trip={this.props.trip} />;
-    // }
   }
 }
 

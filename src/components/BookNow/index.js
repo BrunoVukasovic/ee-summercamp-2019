@@ -31,7 +31,7 @@ class BookNow extends Component {
   };
 
   onButtonClick = () => {
-    console.log(this.props);
+    console.log(this.state);
   };
 
   render() {
@@ -39,8 +39,7 @@ class BookNow extends Component {
       <Layout>
         <button onClick={this.onButtonClick}>Click Me!</button>
         <form onSubmit={this.onSubmit}>
-          <h3>Trip: {this.props.location.state.tripName}</h3>
-          <h3>Trip: {this.props.location.state.slug}</h3>
+          <h3>Trip: {this.state.tripName}</h3>
           <input
             className={styles.InputText}
             type="text"
