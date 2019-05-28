@@ -31,9 +31,7 @@ class BookNow extends Component {
   };
 
   onButtonClick = () => {
-    this.setState({ tripName: this.props.location.state.tripName });
-    console.log(this.state);
-    console.log(typeof this.state);
+    console.log(this.props);
   };
 
   render() {

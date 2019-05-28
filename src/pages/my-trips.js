@@ -7,7 +7,13 @@ import { Link } from "react-router-dom";
 
 import { Spinner } from "../components";
 import { Layout } from "../components";
+
 class MyTrips extends Component {
+  cancelTrip = tripId => {
+    const { firestore } = this.props;
+    // dodat u novu bazu canceledTrips
+    firestore.delete({ collection: "bookedTrips", doc: tripId });
+  };
   render() {
     const { bookedTrips } = this.props;
 
@@ -17,11 +23,17 @@ class MyTrips extends Component {
           <div>
             <h2>My Trips: </h2>
             {bookedTrips.map(bookedTrip => (
-              <p key={bookedTrip.id}>Name: {bookedTrip.tripName}</p>
+              <div key={bookedTrip.id}>
+                <p>Name: {bookedTrip.tripName}</p>
+                <button onClick={() => this.cancelTrip(bookedTrip.id)}>
+                  Delete
+                </button>
+              </div>
             ))}
           </div>
           <div>
             <Link to="/register">
+              <br />
               <button>Register</button>
             </Link>
           </div>
