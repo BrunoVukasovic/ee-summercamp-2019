@@ -7,8 +7,8 @@ import PropTypes from "prop-types";
 class BookNow extends Component {
   state = {
     clientName: "",
-    tripName: "",
-    slug: "",
+    tripName: this.props.location.state.tripName,
+    slug: this.props.location.state.slug,
     phone: "",
     date: "",
     numberOfPeople: "",
@@ -22,12 +22,6 @@ class BookNow extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    // ne radi
-    this.setState({
-      tripName: this.props.location.state.tripName,
-      slug: this.props.location.state.slug
-    });
-
     const newTrip = this.state;
 
     const { firestore, history } = this.props;
@@ -36,9 +30,16 @@ class BookNow extends Component {
       .then(() => history.push("/"));
   };
 
+  onButtonClick = () => {
+    this.setState({ tripName: this.props.location.state.tripName });
+    console.log(this.state);
+    console.log(typeof this.state);
+  };
+
   render() {
     return (
       <Layout>
+        <button onClick={this.onButtonClick}>Click Me!</button>
         <form onSubmit={this.onSubmit}>
           <h3>Trip: {this.props.location.state.tripName}</h3>
           <h3>Trip: {this.props.location.state.slug}</h3>

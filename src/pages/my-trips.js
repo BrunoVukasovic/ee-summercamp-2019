@@ -15,9 +15,9 @@ class MyTrips extends Component {
       return (
         <Layout>
           <div>
-            <h2>Lista korisnika: </h2>
+            <h2>My Trips: </h2>
             {bookedTrips.map(bookedTrip => (
-              <p key={bookedTrip.id}>Name: {bookedTrip.name}</p>
+              <p key={bookedTrip.id}>Name: {bookedTrip.tripName}</p>
             ))}
           </div>
           <div>
