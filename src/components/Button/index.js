@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./styles.module.css";
 import Modal from "./Modal";
+import { Redirect } from "react-router-dom";
 
 class Button extends Component {
   constructor(props) {
@@ -11,9 +12,9 @@ class Button extends Component {
   }
 
   handleClick() {
-    if (this.props.children == "Contact Us") {
+    if (this.props.children === "Contact Us") {
       this.setState({ clicked: true });
-    } else if (this.props.children == "Book Now") {
+    } else if (this.props.children === "Book Now") {
       this.setState({ book: true });
     }
   }
@@ -49,7 +50,17 @@ class Button extends Component {
             </div>
           </div>
         </div>
-        {this.state.book ? <BookNow trip={this.props.trip} /> : null}
+        {this.state.book ? (
+          <Redirect
+            to={{
+              pathname: "/book-now",
+              state: {
+                tripName: this.props.trip,
+                slug: window.location.pathname
+              }
+            }}
+          />
+        ) : null}
       </div>
     );
     // } else if (this.props.children == "Book Now") {

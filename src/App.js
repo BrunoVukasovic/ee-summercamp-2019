@@ -15,7 +15,7 @@ import {
 } from "./pages";
 import { Krka, BlueCave } from "./pages/trips";
 import Login from "./components/Private/Login";
-import BookNow from "./components";
+import { BookNow } from "./components";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
           <Route path="/users" component={Users} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-          <Route path="/book" component={BookNow} />
+          <Route path="/book-now" component={BookNow} />
         </Switch>
       </Router>
     </Provider>
