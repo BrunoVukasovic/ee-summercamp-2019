@@ -1,27 +1,39 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+
 import {
   LandingPage,
   LandTours,
   SeaTours,
   Adventures,
-  Krka,
-  BlueCave
+  MyTrips,
+  Users
 } from "./pages";
+import { Krka, BlueCave } from "./pages/trips";
+import Login from "./components/Private/Login";
+import { BookNow } from "./components";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/land-tours" component={LandTours} />
-        <Route path="/sea-tours" component={SeaTours} />
-        <Route path="/adventures" component={Adventures} />
-        <Route path="/blue-cave" component={BlueCave} />
-        <Route path="/krka" component={Krka} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/land-tours" component={LandTours} />
+          <Route path="/sea-tours" component={SeaTours} />
+          <Route path="/adventures" component={Adventures} />
+          <Route path="/blue-cave" component={BlueCave} />
+          <Route path="/krka" component={Krka} />
+          <Route path="/my-trips" component={MyTrips} />
+          <Route path="/users" component={Users} />
+          <Route path="/login" component={Login} />
+          <Route path="/book-now" component={BookNow} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 

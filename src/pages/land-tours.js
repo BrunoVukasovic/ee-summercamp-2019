@@ -21,7 +21,7 @@ export default () => (
     <MainImage src={mainImage} />
 
     <Container>
-      <Link to="/krka/">
+      <Link to="/krka">
         <TripItem>
           <img src={krkaPhoto} alt="Krka" width="100%" />
           <TripItemHeading>Krka Waterfalls</TripItemHeading>

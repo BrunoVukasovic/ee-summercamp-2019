@@ -20,7 +20,7 @@ export default () => {
       <MainImage src={mainImage} />
 
       <Container>
-        <Link to="/krka/">
+        <Link to="/krka">
           <TripItem>
             <img src={krkaPhoto} alt="Krka" width="100%" />
             <TripItemHeading>Krka Waterfalls</TripItemHeading>
@@ -32,7 +32,7 @@ export default () => {
           </TripItem>
         </Link>
 
-        <Link to="/zip/">
+        <Link to="/zip">
           <TripItem>
             <img src={zipPhoto} alt="Zip line" width="100%" />
             <TripItemHeading>Zip line</TripItemHeading>

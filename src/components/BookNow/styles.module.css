@@ -28,7 +28,7 @@ input[type="date"] {
 }
 
 /* create a new arrow, because we are going to mess up the native one
-see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
+  see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
 input[type="date"]:after {
   content: "\25BC";
   color: #555;
@@ -61,4 +61,24 @@ input[type="date"]::-webkit-inner-spin-button {
 /* adjust clear button */
 input[type="date"]::-webkit-clear-button {
   z-index: 1;
+}
+
+.Button {
+  background-color: white;
+  border: 3px solid #008cba;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: #008cba;
+  color: white;
 }
