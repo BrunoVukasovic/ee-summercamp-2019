@@ -14,9 +14,13 @@ import {
   LoginRedirect
 } from "../components";
 import { Layout } from "../components";
-import { CancelButton } from "../components";
 
 class MyTrips extends Component {
+  state = {
+    upComingTrips: true,
+    pastTrips: false,
+    canceledTrips: false
+  };
   cancelTrip = tripId => {
     const { firestore, history } = this.props;
     // dodat u novu bazu canceledTrips
@@ -25,8 +29,19 @@ class MyTrips extends Component {
       .then(() => history.push("/my-trips"));
   };
 
+  onTabClick = e => {
+    // e.preventDefault();
+    const stateElements = ["upComingTrips", "pastTrips", "canceledTrips"];
+    stateElements.map(stateElement => {
+      this.setState({ [stateElement]: false });
+    });
+    this.setState({ [e.target.value]: true });
+    console.log(e.target.style.backgroundColor);
+  };
+
   render() {
     const { bookedTrips, auth } = this.props;
+    const { upComingTrips, pastTrips, canceledTrips } = this.state;
     const tripDescriptionStyle = { fontSize: "larger" };
 
     // if logged in
@@ -38,40 +53,82 @@ class MyTrips extends Component {
             <div>
               <h2>My Trips: </h2>
 
-              {bookedTrips.map(bookedTrip => (
-                <Link to={bookedTrip.slug} key={bookedTrip.id}>
-                  <TripItem>
-                    <img
-                      src={require("../images" + bookedTrip.slug + ".jpg")}
-                      alt={bookedTrip.tripName}
-                      width="100%"
-                    />
-                    <TripItemHeading>
-                      {"Trip: " + bookedTrip.tripName}
-                    </TripItemHeading>
+              <div className={styles.Tab}>
+                <button
+                  className={styles.TabLinks}
+                  onClick={this.onTabClick}
+                  value={"upComingTrips"}
+                >
+                  UpComing
+                </button>
 
-                    <div className={styles.myTripsDiv}>
-                      <TripDescription style={tripDescriptionStyle}>
-                        <strong>Lead Traveler Name: </strong>
-                        {bookedTrip.clientName}
-                        <br />
-                        <strong>Date: </strong>
-                        {bookedTrip.date}
-                        <br />
-                        <strong>Group size: </strong>
-                        {bookedTrip.numberOfPeople}
-                        <br />
-                      </TripDescription>
-                      <button
-                        onClick={() => this.cancelTrip(bookedTrip.id)}
-                        className={styles.CancelButton}
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </TripItem>
-                </Link>
-              ))}
+                <button
+                  className={styles.TabLinks}
+                  onClick={this.onTabClick}
+                  value={"pastTrips"}
+                >
+                  Past
+                </button>
+
+                <button
+                  className={styles.TabLinks}
+                  onClick={this.onTabClick}
+                  value={"canceledTrips"}
+                >
+                  Canceled
+                </button>
+              </div>
+              {upComingTrips ? (
+                <div>
+                  <h3>Upcoming Trips: </h3>
+                  {bookedTrips.map(bookedTrip => (
+                    <Link to={bookedTrip.slug} key={bookedTrip.id}>
+                      <TripItem>
+                        <img
+                          src={require("../images" + bookedTrip.slug + ".jpg")}
+                          alt={bookedTrip.tripName}
+                          width="100%"
+                        />
+                        <TripItemHeading>
+                          {"Trip: " + bookedTrip.tripName}
+                        </TripItemHeading>
+
+                        <div className={styles.myTripsDiv}>
+                          <TripDescription style={tripDescriptionStyle}>
+                            <strong>Lead Traveler Name: </strong>
+                            {bookedTrip.clientName}
+                            <br />
+                            <strong>Date: </strong>
+                            {bookedTrip.date}
+                            <br />
+                            <strong>Group size: </strong>
+                            {bookedTrip.numberOfPeople}
+                            <br />
+                          </TripDescription>
+                          <button
+                            onClick={() => this.cancelTrip(bookedTrip.id)}
+                            className={styles.CancelButton}
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </TripItem>
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+
+              {pastTrips ? (
+                <div>
+                  <h3>Past trips:</h3>
+                </div>
+              ) : null}
+
+              {canceledTrips ? (
+                <div>
+                  <h3>Canceled trips:</h3>
+                </div>
+              ) : null}
             </div>
           </Layout>
         );
