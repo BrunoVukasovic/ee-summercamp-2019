@@ -34,17 +34,12 @@ class BookNow extends Component {
       .then(() => history.push("/"));
   };
 
-  onButtonClick = () => {
-    console.log(this.props.auth.uid);
-  };
-
   render() {
     const { auth } = this.props;
     //if logged in
     if (auth.uid) {
       return (
         <Layout>
-          <button onClick={this.onButtonClick}>Click Me!</button>
           <form onSubmit={this.onSubmit}>
             <h3>Trip: {this.state.tripName}</h3>
             <input
@@ -106,7 +101,6 @@ BookNow.propTypes = {
   firestore: PropTypes.object.isRequired
 };
 
-// export default firestoreConnect()(BookNow);
 export default compose(
   firebaseConnect(),
   firestoreConnect(),

@@ -11,5 +11,6 @@ export { default as TripItemHeading } from "./TripItemHeading";
 export { default as TripItemDescription } from "./TripItemDescription";
 export { default as Spinner } from "./Spinner";
 export { default as BookNow } from "./BookNow";
-export { default as CancelButton } from "./Button/Cancel";
+// export { default as CancelButton } from "./Button/Cancel";
 export { default as LoginRedirect } from "./LoginRedirect";
+export { default as BookedTrips } from "./BookedTrips";

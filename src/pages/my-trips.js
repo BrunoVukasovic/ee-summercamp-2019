@@ -11,38 +11,40 @@ import {
   TripItem,
   TripItemHeading,
   TripDescription,
-  LoginRedirect
+  LoginRedirect,
+  BookedTrips
 } from "../components";
 import { Layout } from "../components";
+import CanceledTrips from "../components/CanceledTrips";
 
 class MyTrips extends Component {
   state = {
-    upComingTrips: true,
-    pastTrips: false,
-    canceledTrips: false
+    upcoming: true,
+    past: false,
+    canceled: false
   };
-  cancelTrip = tripId => {
+  cancelTrip = bookedTrip => {
     const { firestore, history } = this.props;
-    // dodat u novu bazu canceledTrips
+    // add to canceledTrips collection (db table)
+    firestore.add({ collection: "canceledTrips" }, bookedTrip);
+
+    // delete from bookedTrips collection
     firestore
-      .delete({ collection: "bookedTrips", doc: tripId })
+      .delete({ collection: "bookedTrips", doc: bookedTrip.id })
       .then(() => history.push("/my-trips"));
   };
 
   onTabClick = e => {
-    // e.preventDefault();
-    const stateElements = ["upComingTrips", "pastTrips", "canceledTrips"];
+    const stateElements = ["upcoming", "past", "canceled"];
     stateElements.map(stateElement => {
       this.setState({ [stateElement]: false });
     });
     this.setState({ [e.target.value]: true });
-    console.log(e.target.style.backgroundColor);
   };
 
   render() {
-    const { bookedTrips, auth } = this.props;
-    const { upComingTrips, pastTrips, canceledTrips } = this.state;
-    const tripDescriptionStyle = { fontSize: "larger" };
+    const { bookedTrips, auth, canceledTrips } = this.props;
+    const { upcoming, past, canceled } = this.state;
 
     // if logged in
     if (auth.uid) {
@@ -57,15 +59,15 @@ class MyTrips extends Component {
                 <button
                   className={styles.TabLinks}
                   onClick={this.onTabClick}
-                  value={"upComingTrips"}
+                  value={"upcoming"}
                 >
-                  UpComing
+                  Upcoming
                 </button>
 
                 <button
                   className={styles.TabLinks}
                   onClick={this.onTabClick}
-                  value={"pastTrips"}
+                  value={"past"}
                 >
                   Past
                 </button>
@@ -73,60 +75,39 @@ class MyTrips extends Component {
                 <button
                   className={styles.TabLinks}
                   onClick={this.onTabClick}
-                  value={"canceledTrips"}
+                  value={"canceled"}
                 >
                   Canceled
                 </button>
               </div>
-              {upComingTrips ? (
+              {upcoming ? (
                 <div>
                   <h3>Upcoming Trips: </h3>
                   {bookedTrips.map(bookedTrip => (
                     <Link to={bookedTrip.slug} key={bookedTrip.id}>
-                      <TripItem>
-                        <img
-                          src={require("../images" + bookedTrip.slug + ".jpg")}
-                          alt={bookedTrip.tripName}
-                          width="100%"
-                        />
-                        <TripItemHeading>
-                          {"Trip: " + bookedTrip.tripName}
-                        </TripItemHeading>
-
-                        <div className={styles.myTripsDiv}>
-                          <TripDescription style={tripDescriptionStyle}>
-                            <strong>Lead Traveler Name: </strong>
-                            {bookedTrip.clientName}
-                            <br />
-                            <strong>Date: </strong>
-                            {bookedTrip.date}
-                            <br />
-                            <strong>Group size: </strong>
-                            {bookedTrip.numberOfPeople}
-                            <br />
-                          </TripDescription>
-                          <button
-                            onClick={() => this.cancelTrip(bookedTrip.id)}
-                            className={styles.CancelButton}
-                          >
-                            Cancel
-                          </button>
-                        </div>
-                      </TripItem>
+                      <BookedTrips
+                        bookedTrip={bookedTrip}
+                        cancelTrip={this.cancelTrip}
+                      />
                     </Link>
                   ))}
                 </div>
               ) : null}
 
-              {pastTrips ? (
+              {past ? (
                 <div>
                   <h3>Past trips:</h3>
                 </div>
               ) : null}
 
-              {canceledTrips ? (
+              {canceled ? (
                 <div>
                   <h3>Canceled trips:</h3>
+                  {canceledTrips.map(canceledTrip => (
+                    <Link to={canceledTrip.slug} key={canceledTrip.id}>
+                      <CanceledTrips canceledTrips={canceledTrip} />
+                    </Link>
+                  ))}
                 </div>
               ) : null}
             </div>
@@ -156,11 +137,15 @@ MyTrips.propTypes = {
 
 // dohvaćamo podatke iz kolekcije bookedTrips i spremamo ih u state.firestore.ordered.bookedTrips
 export default compose(
-  firestoreConnect([{ collection: "bookedTrips" }]),
+  firestoreConnect([
+    { collection: "bookedTrips" },
+    { collection: "canceledTrips" }
+  ]),
   connect((state, props) => ({
     // connect state to props
-    // mozemo dohvatit podatke sa this.props.users
+    // mozemo dohvatit podatke sa this.props.bookedTrips
     bookedTrips: state.firestore.ordered.bookedTrips,
+    canceledTrips: state.firestore.ordered.canceledTrips,
     auth: state.firebase.auth
   }))
 )(MyTrips);

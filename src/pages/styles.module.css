@@ -1,4 +1,4 @@
-.myTripsDiv {
+/* .myTripsDiv {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s; 
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -22,7 +22,7 @@
 .CancelButton:hover {
   background-color: red;
   color: white;
-}
+} */
 
 .Tab {
   display: flex;

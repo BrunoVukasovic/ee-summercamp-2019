@@ -2,37 +2,34 @@ import React, { Component } from "react";
 import styles from "./styles.module.css";
 import { TripItem, TripItemHeading, TripDescription } from "../../components";
 
-export default class BookedTrips extends Component {
+export default class CanceledTrips extends Component {
   render() {
-    const { bookedTrip } = this.props;
+    const { canceledTrips } = this.props;
     const tripDescriptionStyle = { fontSize: "larger" };
     return (
       <TripItem>
         <img
-          src={require("../../images" + bookedTrip.slug + ".jpg")}
-          alt={bookedTrip.tripName}
+          src={require("../../images" + canceledTrips.slug + ".jpg")}
+          alt={canceledTrips.tripName}
           width="100%"
         />
-        <TripItemHeading>{"Trip: " + bookedTrip.tripName}</TripItemHeading>
+        <strike>
+          <TripItemHeading>{"Trip: " + canceledTrips.tripName}</TripItemHeading>
+        </strike>
 
         <div className={styles.myTripsDiv}>
           <TripDescription style={tripDescriptionStyle}>
             <strong>Lead Traveler Name: </strong>
-            {bookedTrip.clientName}
+            {canceledTrips.clientName}
             <br />
             <strong>Date: </strong>
-            {bookedTrip.date}
+            {canceledTrips.date}
             <br />
             <strong>Group size: </strong>
-            {bookedTrip.numberOfPeople}
+            {canceledTrips.numberOfPeople}
             <br />
           </TripDescription>
-          <button
-            onClick={() => this.props.cancelTrip(bookedTrip)}
-            className={styles.CancelButton}
-          >
-            Cancel
-          </button>
+          <p className={styles.Note}>Canceled!</p>
         </div>
       </TripItem>
     );
