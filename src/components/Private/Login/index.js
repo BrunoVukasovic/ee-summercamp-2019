@@ -79,7 +79,7 @@ class Login extends Component {
 
         <div className={styles.Register}>
           <label className={styles.Label}>Dont't have an account?</label>
-          <buton className={styles.Button}>Register</buton>
+          <button className={styles.Button}>Register</button>
         </div>
       </Layout>
     );

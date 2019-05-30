@@ -10,7 +10,8 @@ import {
   Spinner,
   TripItem,
   TripItemHeading,
-  TripDescription
+  TripDescription,
+  LoginRedirect
 } from "../components";
 import { Layout } from "../components";
 import { CancelButton } from "../components";
@@ -23,58 +24,69 @@ class MyTrips extends Component {
       .delete({ collection: "bookedTrips", doc: tripId })
       .then(() => history.push("/my-trips"));
   };
+
   render() {
-    const { bookedTrips } = this.props;
+    const { bookedTrips, auth } = this.props;
     const tripDescriptionStyle = { fontSize: "larger" };
 
-    if (bookedTrips) {
-      return (
-        <Layout>
-          <div>
-            <h2>My Trips: </h2>
+    // if logged in
+    if (auth.uid) {
+      // if bookedTrips are fetched
+      if (bookedTrips) {
+        return (
+          <Layout>
+            <div>
+              <h2>My Trips: </h2>
 
-            {bookedTrips.map(bookedTrip => (
-              <Link to={bookedTrip.slug} key={bookedTrip.id}>
-                <TripItem>
-                  <img
-                    src={require("../images" + bookedTrip.slug + ".jpg")}
-                    alt={bookedTrip.tripName}
-                    width="100%"
-                  />
-                  <TripItemHeading>
-                    {"Trip: " + bookedTrip.tripName}
-                  </TripItemHeading>
+              {bookedTrips.map(bookedTrip => (
+                <Link to={bookedTrip.slug} key={bookedTrip.id}>
+                  <TripItem>
+                    <img
+                      src={require("../images" + bookedTrip.slug + ".jpg")}
+                      alt={bookedTrip.tripName}
+                      width="100%"
+                    />
+                    <TripItemHeading>
+                      {"Trip: " + bookedTrip.tripName}
+                    </TripItemHeading>
 
-                  <div className={styles.myTripsDiv}>
-                    <TripDescription style={tripDescriptionStyle}>
-                      <strong>Lead Traveler Name: </strong>
-                      {bookedTrip.clientName}
-                      <br />
-                      <strong>Date: </strong>
-                      {bookedTrip.date}
-                      <br />
-                      <strong>Group size: </strong>
-                      {bookedTrip.numberOfPeople}
-                      <br />
-                    </TripDescription>
-                    <button
-                      onClick={() => this.cancelTrip(bookedTrip.id)}
-                      className={styles.CancelButton}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </TripItem>
-              </Link>
-            ))}
-          </div>
-        </Layout>
-      );
+                    <div className={styles.myTripsDiv}>
+                      <TripDescription style={tripDescriptionStyle}>
+                        <strong>Lead Traveler Name: </strong>
+                        {bookedTrip.clientName}
+                        <br />
+                        <strong>Date: </strong>
+                        {bookedTrip.date}
+                        <br />
+                        <strong>Group size: </strong>
+                        {bookedTrip.numberOfPeople}
+                        <br />
+                      </TripDescription>
+                      <button
+                        onClick={() => this.cancelTrip(bookedTrip.id)}
+                        className={styles.CancelButton}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </TripItem>
+                </Link>
+              ))}
+            </div>
+          </Layout>
+        );
+      } else {
+        return (
+          <Layout>
+            <Spinner />
+          </Layout>
+        );
+      }
     } else {
       return (
-        <Layout>
-          <Spinner />
-        </Layout>
+        <LoginRedirect>
+          You must be logged in to view booked trips!
+        </LoginRedirect>
       );
     }
   }
@@ -85,12 +97,13 @@ MyTrips.propTypes = {
   bookedTrips: PropTypes.array
 };
 
-// dohvaćamo podatke iz kolekcije users i spremamo ih u state.firestore.ordered.users
+// dohvaćamo podatke iz kolekcije bookedTrips i spremamo ih u state.firestore.ordered.bookedTrips
 export default compose(
   firestoreConnect([{ collection: "bookedTrips" }]),
   connect((state, props) => ({
     // connect state to props
     // mozemo dohvatit podatke sa this.props.users
-    bookedTrips: state.firestore.ordered.bookedTrips
+    bookedTrips: state.firestore.ordered.bookedTrips,
+    auth: state.firebase.auth
   }))
 )(MyTrips);

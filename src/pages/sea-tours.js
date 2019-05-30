@@ -21,7 +21,7 @@ export default () => (
     <MainImage src={mainImage} />
 
     <Container>
-      <Link to="/blue-cave/">
+      <Link to="/blue-cave">
         <TripItem>
           <img src={bluecavePhoto} alt="blue-cave" width="100%" />
           <TripItemHeading>Blue Cave</TripItemHeading>
