@@ -6,14 +6,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 
-import {
-  Spinner,
-  TripItem,
-  TripItemHeading,
-  TripDescription,
-  LoginRedirect,
-  BookedTrips
-} from "../components";
+import { Spinner, LoginRedirect, BookedTrips } from "../components";
 import { Layout } from "../components";
 import CanceledTrips from "../components/CanceledTrips";
 

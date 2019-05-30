@@ -1,78 +1,93 @@
 .Button {
-    background-color: white; 
-    border: 3px solid #008CBA;
-    color: black;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
+  background-color: white;
+  border: 3px solid #008cba;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
-  .Button:hover {
-    background-color: #008CBA;
-    color: white;
-  }
+.Button:hover {
+  background-color: #008cba;
+  color: white;
+}
 
-
-.ModalNone{
+.ModalNone {
   display: none; /* Hidden by default */
 }
 
 .ModalBlock {
-    display: block; 
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
-  .ModalContent {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-
-  .SubmitCancleDiv{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .Submit{
-    width: 30%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.Cancle{
+.ModalContent {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.SubmitCancleDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Submit {
   width: 30%;
-  background-color:red;
-  color: white;
+  background-color: white;
+  border: 3px solid #008cba;
+  color: black;
   padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
   margin: 8px 0;
-  border: none;
-  border-radius: 4px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
-.Submit:hover{
-    background-color: #45a049;
+.Cancle {
+  width: 30%;
+  background-color: white;
+  border: 3px solid red;
+  color: black;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 8px 0;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.Submit:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.Cancle:hover {
+  background-color: red;
+  color: white;
 }
 
 .Close {
@@ -84,7 +99,7 @@
 
 .Close:hover,
 .Close:focus {
-  color: var(--color-gold);
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }

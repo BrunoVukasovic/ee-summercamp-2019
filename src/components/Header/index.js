@@ -44,7 +44,7 @@ class Header extends Component {
   };
 
   static getDerivedStateFromProps(props, state) {
-    // nemos koristit this.props, nego samo props
+    // nemos koristit this.props, nego samo props u ovoj metodi
     const { auth } = props;
 
     if (auth.uid) {

@@ -31,15 +31,6 @@ class Login extends Component {
       })
       .then(() => this.props.history.push("/"))
       .catch(error => alert("Invalid Login"));
-
-    // let { message, invalid } = this.state;
-    // if (status.error) {
-    //   message = status.message;
-    //   invalid = true;
-    //   return this.setState({ email: "", password: "", message, invalid });
-    // }
-
-    // navigate(this.props.private);
   };
 
   render() {
