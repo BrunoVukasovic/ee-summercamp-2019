@@ -46,8 +46,9 @@ const store = createStoreWithFirebase(
   rootReducer,
   initialState,
   compose(
-    reactReduxFirebase(firebase),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    reactReduxFirebase(firebase)
+    // the line bellow causes error on mobile beacuse: compose(here must be functions only)
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
