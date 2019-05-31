@@ -8,3 +8,4 @@ export { default as Plitvice } from "./plitvice";
 export { default as Rafting } from "./rafting";
 export { default as Sailing } from "./sailing";
 export { default as ZipLine } from "./zip";
+export { default as Mostar } from "./mostar";

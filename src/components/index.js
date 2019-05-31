@@ -15,3 +15,5 @@ export { default as BookNow } from "./BookNow";
 export { default as LoginRedirect } from "./LoginRedirect";
 export { default as BookedTrips } from "./BookedTrips";
 export { default as Login } from "./Login";
+export { default as Register } from "./Register";
+export { default as ButonSimple } from "./ButonSimple";

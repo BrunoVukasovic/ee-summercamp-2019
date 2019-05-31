@@ -10,7 +10,7 @@ import {
   SeaTours,
   Adventures,
   MyTrips,
-  Users
+  Register
 } from "./pages";
 import {
   BlueCave,
@@ -22,7 +22,8 @@ import {
   Plitvice,
   Rafting,
   Sailing,
-  ZipLine
+  ZipLine,
+  Mostar
 } from "./pages/trips";
 import { Login } from "./components";
 import { BookNow } from "./components";
@@ -45,7 +46,6 @@ class App extends Component {
             <Route path="/adventures" component={Adventures} />
             <Route path="/blue-cave" component={BlueCave} />
             <Route path="/my-trips" component={MyTrips} />
-            <Route path="/users" component={Users} />
             <Route path="/login" component={Login} />
             <Route path="/book-now" component={BookNow} />
             <Route path="/brac" component={Brac} />
@@ -57,6 +57,8 @@ class App extends Component {
             <Route path="/rafting" component={Rafting} />
             <Route path="/sailing" component={Sailing} />
             <Route path="/zip" component={ZipLine} />
+            <Route path="/mostar" component={Mostar} />
+            <Route path="/register" component={Register} />
           </Switch>
         </Router>
       </Provider>

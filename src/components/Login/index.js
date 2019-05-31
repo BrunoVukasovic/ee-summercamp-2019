@@ -1,7 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-// import { compose } from "redux";
-// import { connect } from "react-redux";
 import { firebaseConnect } from "react-redux-firebase";
 
 import styles from "./styles.module.css";
@@ -70,7 +69,9 @@ class Login extends Component {
 
         <div className={styles.Register}>
           <label className={styles.Label}>Dont't have an account?</label>
-          <button className={styles.Button}>Register</button>
+          <Link to="/register">
+            <button className={styles.Button}>Register</button>
+          </Link>
         </div>
       </Layout>
     );

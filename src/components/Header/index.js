@@ -13,30 +13,24 @@ import NavLinkDrpodown from "./NavLinkDrpodown";
 import DropdownContent from "./DropdownContent";
 import dropKrka from "./Images/dropKrka.jpg";
 import dropPlitvice from "./Images/dropPlitvice.jpg";
-import dropKlis from "./Images/dropKlis.jpg";
-import dropOmis from "./Images/dropOmis.jpg";
 import dropDubrovnik from "./Images/dropDubrovnik.jpg";
 import dropMostar from "./Images/dropMostar.jpg";
 
 import dropRafting from "./Images/dropRafting.jpg";
 import dropZip from "./Images/dropZip.jpg";
 import dropCanyoning from "./Images/dropCanyoning.jpg";
-import dropCycling from "./Images/dropCycling.jpg";
 import dropDiving from "./Images/dropDiving.jpg";
-import dropSeaKayaking from "./Images/dropSeaKayaking.jpg";
 
 import dropBlueCave from "./Images/dropBlueCave.jpg";
-import dropBlueLagoon from "./Images/dropBlueLagoon.jpg";
 import dropBrac from "./Images/dropBrac.jpg";
 import dropHvar from "./Images/dropHvar.jpg";
 import dropSailing from "./Images/dropSailing.jpg";
-import dropVis from "./Images/dropVis.jpg";
 
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 
 class Header extends Component {
   state = {
@@ -67,7 +61,6 @@ class Header extends Component {
   render() {
     const { isAuthenticated } = this.state;
 
-    library.add(faSearch);
     library.add(faAngleDoubleDown);
 
     return (
@@ -100,12 +93,15 @@ class Header extends Component {
               <Link to="/my-trips" className={styles.MobileLink}>
                 My Trips
               </Link>
-              <Link to="/blog" className={styles.MobileLink}>
-                Travel Stories
-              </Link>
-              <Link to="/search" className={styles.MobileLink}>
-                Search
-              </Link>
+              {isAuthenticated ? (
+                <Link to="/login" className={styles.MobileLink}>
+                  Login
+                </Link>
+              ) : (
+                <Link to="/login" className={styles.MobileLink}>
+                  Log Out
+                </Link>
+              )}
             </div>
           </div>
           <div className={styles.Home}>
@@ -126,9 +122,6 @@ class Header extends Component {
             </div>
           )}
 
-          {/* <div className={styles.logIn}>
-            <NavLink to="/login">My Trips</NavLink>
-          </div> */}
           <div className={cn(styles.LandToursDropDown, styles.Dropdown)}>
             <NavLinkDrpodown to="/land-tours">
               Land Tours <FontAwesomeIcon icon="angle-double-down" />
@@ -154,26 +147,7 @@ class Header extends Component {
                   alt="dropPlitvice"
                 />
               </Link>
-              <Link to="/klis">
-                <img
-                  className={classNames({
-                    [styles.DropImage]: true,
-                    [styles.Image3]: true
-                  })}
-                  src={dropKlis}
-                  alt="dropKlis"
-                />
-              </Link>
-              <Link to="/omis">
-                <img
-                  className={classNames({
-                    [styles.DropImage]: true,
-                    [styles.Image4]: true
-                  })}
-                  src={dropOmis}
-                  alt="dropOmis"
-                />
-              </Link>
+
               <Link to="/dubrovnik">
                 <img
                   className={classNames({
@@ -211,16 +185,7 @@ class Header extends Component {
                   alt="dropBlueCave"
                 />
               </Link>
-              <Link to="/blue-lagoon">
-                <img
-                  className={classNames({
-                    [styles.DropImage]: true,
-                    [styles.Image2]: true
-                  })}
-                  src={dropBlueLagoon}
-                  alt="dropBlueLagoon"
-                />
-              </Link>
+
               <Link to="/brac">
                 <img
                   className={classNames({
@@ -231,7 +196,7 @@ class Header extends Component {
                   alt="dropBrac"
                 />
               </Link>
-              <Link to="/hvar">
+              <Link to="/brac">
                 <img
                   className={classNames({
                     [styles.DropImage]: true,
@@ -249,16 +214,6 @@ class Header extends Component {
                   })}
                   src={dropSailing}
                   alt="dropSailing"
-                />
-              </Link>
-              <Link to="/vis">
-                <img
-                  className={classNames({
-                    [styles.DropImage]: true,
-                    [styles.Image6]: true
-                  })}
-                  src={dropVis}
-                  alt="dropVis"
                 />
               </Link>
             </DropdownContent>
@@ -298,16 +253,7 @@ class Header extends Component {
                   alt="dropCanyoning"
                 />
               </Link>
-              <Link to="/cycling">
-                <img
-                  className={classNames({
-                    [styles.DropImage]: true,
-                    [styles.Image4]: true
-                  })}
-                  src={dropCycling}
-                  alt="dropCycling"
-                />
-              </Link>
+
               <Link to="/diving">
                 <img
                   className={classNames({
@@ -318,24 +264,9 @@ class Header extends Component {
                   alt="dropDiving"
                 />
               </Link>
-              <Link to="/sea-kayaking">
-                <img
-                  className={classNames({
-                    [styles.DropImage]: true,
-                    [styles.Image6]: true
-                  })}
-                  src={dropSeaKayaking}
-                  alt="dropSeaKayaking"
-                />
-              </Link>
             </DropdownContent>
           </div>
-          <div className={styles.searchBar}>
-            <NavLink to="/search" className={styles.searchBar}>
-              Search &nbsp;
-              <FontAwesomeIcon icon="search" />
-            </NavLink>
-          </div>
+          <div className={styles.searchBar} />
         </Container>
       </header>
     );
