@@ -90,6 +90,7 @@ class MyTrips extends Component {
               {past ? (
                 <div>
                   <h3>Past trips:</h3>
+                  <p>You did not went on any trip with us yet...</p>
                 </div>
               ) : null}
 

@@ -66,6 +66,7 @@ class Header extends Component {
 
   render() {
     const { isAuthenticated } = this.state;
+
     library.add(faSearch);
     library.add(faAngleDoubleDown);
 
