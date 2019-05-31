@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { firebaseConnect } from "react-redux-firebase";
 
 import styles from "./styles.module.css";
-import { Layout } from "../../../components";
+import { Layout } from "../";
 
 class Login extends Component {
   state = {

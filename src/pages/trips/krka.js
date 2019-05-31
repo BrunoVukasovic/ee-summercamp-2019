@@ -6,7 +6,7 @@ import {
   ButtonContainer,
   MainImage
 } from "../../components";
-import mainImage from "../../images/BlueCave16x9.jpg";
+import mainImage from "../../images/krka.jpg";
 
 export default class Krka extends Component {
   componentDidMount() {
@@ -19,52 +19,46 @@ export default class Krka extends Component {
         <MainImage src={mainImage} />
 
         <ButtonContainer>
-          <Button trip="Blue Cave">Contact Us</Button>
-          <Button trip="Blue Cave">Book Now</Button>
+          <Button trip="Krka">Contact Us</Button>
+          <Button trip="Krka">Book Now</Button>
         </ButtonContainer>
-        <h2>Blue Cave</h2>
+        <h2>Krka</h2>
         <TripDescription>
-          For all sea lovers, but also for those who want to see something
-          unique, Blue cave tour from Split is perfect excursion! Jump on
-          speedboat for an early morning exciting{" "}
-          <strong> 90 minutes ride to Biševo Island </strong>and the Blue cave
-          visit from Split. We will arrive around 09:30h, just in time for
-          memorable scenery when the sunlight reflects through the sea and
-          illuminates the entire cave in <strong>aquamarine blue light</strong>.
-          Listen the story from official local guide of how the cave was
-          discovered and what makes the magic.
+          Adventure starts at our meeting point. We are on the way to Krka
+          National park from Split in the air-conditioned mini-van or bus.{" "}
           <br /> <br />
-          After the cave tour, we are back on a speedboat to our next attraction
-          which is <strong>Monk Seal cave</strong>, where the Mediterranean monk
-          seal used to reside. Passing beside picturesque southern side of the
-          island Vis, where full of caves, beaches and diverse forms of nature
-          and rocks caused by changes on the sea, our next destination is
-          Stiniva bay, voted best European beach in 2016., where we'll stop for
-          a swim in the unique narrow bay that ends with a white pebbles beach.
+          In about an hour and 30 minutes we arrive to Krka National Park and
+          embark on a tour. First up is the charming town of Skradin where we
+          take the <strong>30-minutes boat ride</strong> to Skradinski buk and
+          back, one of the most famous Croatian natural beauties and the largest
+          travertine waterfall in Europe.
           <br /> <br />
-          Afterwards we stop on Budikovac island for a longer swim on hidden
-          white pebble beach with turquoise sea color. On our way to the island
-          of Hvar you will enjoy the panoramic view of the amazing archipelago
-          of Pakleni islands – the oldest and the most famous Hvar’s resort,
-          spacious lagoon with shallow sandy beaches, surrounded by pine forest,
-          fragrant heather and rosemary bushes and various exotic plants.
+          Skradinski buk is the last of seven waterfalls on the Krka River but
+          sure not the least as it creates most travertine cascades, islands and
+          lakes. In over 17 steps of Skradinski buk, spread over 800 meters in
+          length, lies one of the most unusual and beautiful landscape images of
+          the National Park.
           <br /> <br />
-          Free time for a lunch in Palmizana at Pakleni islands. Our final stop
-          is town of Hvar, on the island Hvar,
-          <strong> one of most beautiful harbours of the world</strong>, with
-          beautiful nature and surroundings, as well a rich cultural heritage,
-          with walls dating back to the 7th century, and many 15th-17th century
-          Venetian era noble houses. Explore the town by yourself and enjoy the
-          real Mediterranean atmosphere and local hospitality.
+          Our program includes a{" "}
+          <strong>
+            fascinating tour of an authentically restored ensemble of stone
+            small houses
+          </strong>
+          , workshops, exhibits and watermills and a beautiful walk through
+          forest pathways and wooden bridges designed to let you experience the
+          rich diversity of flora and fauna there.
           <br /> <br />
-          Our Blue cave and Hvar tour from Split ends with a quiet ride on the
-          smooth sea at sunset, so you can enjoy all the beauty and all the
-          colors of the sunset at the open sea. There you will have more time
-          for swimming and sunbathing on a beautiful pebble beach.
+          Enjoy the magnificent Skradinski buk, lunch and{" "}
+          <strong>free time for swimming and paddling</strong> under a little
+          waterfall; the perfect way to cool off in the sweltering summer day!
+          The final adventure is a visit to a historic, seaside city of Sibenik,
+          available only in March, April, May and October. The return to Split
+          along the coast road is gorgeous – picturesque villages and beautiful
+          offshore islands.
           <br /> <br />
-          <strong>NOTE:</strong> Guest should have proper clothing, wind jacket,
-          bathing suite, hat, additional clothes for change, towel, sunglasses
-          and suncream.
+          <strong>NOTE:</strong> Guests should have proper clothing for taking
+          the tour: sportswear, bathing suite, comfortable shoes, additional
+          clothes for change. Out of season warm sweater. <br /> <br />
           <br /> <br />
         </TripDescription>
       </Layout>

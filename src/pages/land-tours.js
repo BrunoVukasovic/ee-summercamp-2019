@@ -8,13 +8,10 @@ import {
   TripItemHeading,
   TripItemDescription
 } from "../components";
-import krkaPhoto from "../images/krka4x3.jpg";
-import klisPhoto from "../images/klis4x3.jpg";
-import omisPhoto from "../images/omis4x3.jpg";
-import dubrovnikPhoto from "../images/dubrovnik4x3.jpg";
-import mostarPhoto from "../images/mostar4x3.jpg";
-import plitivcePhoto from "../images/plitvice4x3.jpg";
-import mainImage from "../images/krka16x9.jpg";
+import krkaPhoto from "../images/4x3/krka.jpg";
+import dubrovnikPhoto from "../images/4x3/dubrovnik.jpg";
+import plitivcePhoto from "../images/4x3/plitvice.jpg";
+import mainImage from "../images/krka.jpg";
 
 export default () => (
   <Layout>
@@ -46,33 +43,6 @@ export default () => (
         </TripItem>
       </Link>
 
-      <Link to="/klis">
-        <TripItem>
-          <img src={klisPhoto} alt="Klis" width="100%" />
-          <TripItemHeading>Klis</TripItemHeading>
-          <TripItemDescription>
-            Klis fortress is famous for its supreme position and the historical
-            role it played. It was built overlooking the mountain pass between
-            surrounding Mosor and Kozjak mountains, protecting the coastal area
-            with Ilyrian, Roman and Slavic inhabitants from inland invaders
-            (barbarians and Ottomans) for centuries.
-          </TripItemDescription>
-        </TripItem>
-      </Link>
-
-      <Link to="/omis">
-        <TripItem>
-          <img src={omisPhoto} alt="Omis" width="100%" />
-          <TripItemHeading>Omiš</TripItemHeading>
-          <TripItemDescription>
-            Comfortably ensconced in car or minivan, with English speaking
-            driver-guide we will arrive to Omiš. This small beautiful town
-            famous for pirates of Omiš whose ships were a centuries-long symbol
-            of retaliation, courage and strength, has become a modern tourist
-            settlement.
-          </TripItemDescription>
-        </TripItem>
-      </Link>
       <Link to="/dubrovnik">
         <TripItem>
           <img src={dubrovnikPhoto} alt="Dubrovnik" width="100%" />
@@ -82,18 +52,6 @@ export default () => (
             Stradun, a splendid main promenade street of the Old Town. You will
             get to sightsee Franciscan Monastery (its cloister is one of the
             most impressive sites in the city!).
-          </TripItemDescription>
-        </TripItem>
-      </Link>
-      <Link to="/mostar">
-        <TripItem>
-          <img src={mostarPhoto} alt="Mostar" width="100%" />
-          <TripItemHeading>Mostar</TripItemHeading>
-          <TripItemDescription>
-            Our first destination is Mostar (ancient Ottoman city known as ˈthe
-            window to the Orient'), where you will get to explore the Old
-            Bazaar, full of picturesque shops and crafts workshops, then
-            sightsee the Mosque.
           </TripItemDescription>
         </TripItem>
       </Link>

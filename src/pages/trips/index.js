@@ -1,2 +1,10 @@
 export { default as BlueCave } from "./blue-cave";
+export { default as Brac } from "./brac";
+export { default as Canyoning } from "./canyoning";
+export { default as Diving } from "./diving";
+export { default as Dubrovnik } from "./dubrovnik";
 export { default as Krka } from "./krka";
+export { default as Plitvice } from "./plitvice";
+export { default as Rafting } from "./rafting";
+export { default as Sailing } from "./sailing";
+export { default as ZipLine } from "./zip";

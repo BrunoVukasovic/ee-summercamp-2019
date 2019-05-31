@@ -6,7 +6,7 @@ import {
   ButtonContainer,
   MainImage
 } from "../../components";
-import mainImage from "../../images/BlueCave16x9.jpg";
+import mainImage from "../../images/blue-cave.jpg";
 
 export default () => {
   return (

@@ -8,13 +8,11 @@ import {
   TripItemHeading,
   TripItemDescription
 } from "../components";
-import canyoningPhoto from "../images/canyoning4x3.jpg";
-import cyclingPhoto from "../images/cycling4x3.jpg";
-import divingPhoto from "../images/diving4x3.jpg";
-import raftingPhoto from "../images/rafting4x3.jpg";
-import seaKayakingPhoto from "../images/seaKayaking4x3.jpg";
-import zipPhoto from "../images/zip4x3.jpg";
-import mainImage from "../images/rafting16x9.JPG";
+import canyoningPhoto from "../images/4x3/canyoning.jpg";
+import divingPhoto from "../images/4x3/diving.jpg";
+import raftingPhoto from "../images/4x3/rafting.jpg";
+import zipPhoto from "../images/4x3/zip.jpg";
+import mainImage from "../images/rafting.jpg";
 
 export default () => (
   <Layout>
@@ -31,19 +29,6 @@ export default () => (
             the canyon carved by Cetina River. You walk through the river and
             rapids, pass through subterranean tunnels, swim in natural river
             basins, bypass waterfalls and lakes...
-          </TripItemDescription>
-        </TripItem>
-      </Link>
-
-      <Link to="/cycling">
-        <TripItem>
-          <img src={cyclingPhoto} alt="cycling" width="100%" />
-          <TripItemHeading>Cycling</TripItemHeading>
-          <TripItemDescription>
-            Cross country cycling throughout paths, fields and hillsides of the
-            Dalmatian hinterland, by the lakeshore of Lake Peruča and canyon of
-            the river Cetina ... real sources of life through the history and
-            legacy.
           </TripItemDescription>
         </TripItem>
       </Link>
@@ -69,19 +54,6 @@ export default () => (
             your vacation in Split, we have exactly what you need! This is an
             exciting and popular adventure sport that brings friends and
             families together to share a unique, memorable experience.
-          </TripItemDescription>
-        </TripItem>
-      </Link>
-
-      <Link to="/sea-kayaking">
-        <TripItem>
-          <img src={seaKayakingPhoto} alt="Sea kayaking" width="100%" />
-          <TripItemHeading>Sea kayaking</TripItemHeading>
-          <TripItemDescription>
-            Spend a relaxing day paddling around the town of Split and
-            fascinating Marjan hill while enjoying the spectacular views. Take a
-            relaxing morning session or enjoy the magnificent sunset from the
-            sea on the afternoon tour
           </TripItemDescription>
         </TripItem>
       </Link>
