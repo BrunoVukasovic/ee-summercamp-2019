@@ -1,1 +1,0 @@
-export const GET_BOOKED_TRIPS = "GET_BOOKED_TRIPS";
