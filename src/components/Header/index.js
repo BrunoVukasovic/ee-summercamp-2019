@@ -95,7 +95,7 @@ class Header extends Component {
               </Link>
               {isAuthenticated ? (
                 <Link
-                  to="/login"
+                  to="/"
                   className={styles.MobileLink}
                   onClick={this.onLogoutClick}
                 >
