@@ -95,11 +95,11 @@ class Header extends Component {
               </Link>
               {isAuthenticated ? (
                 <Link to="/login" className={styles.MobileLink}>
-                  Login
+                  Log Out
                 </Link>
               ) : (
                 <Link to="/login" className={styles.MobileLink}>
-                  Log Out
+                  Login
                 </Link>
               )}
             </div>
