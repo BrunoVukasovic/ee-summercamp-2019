@@ -1,29 +1,3 @@
-/* .myTripsDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.CancelButton {
-  background-color: white;
-  border: 3px solid red;
-  color: black;
-  padding: 8px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; 
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.CancelButton:hover {
-  background-color: red;
-  color: white;
-} */
-
 .Tab {
   display: flex;
   justify-content: space-between;

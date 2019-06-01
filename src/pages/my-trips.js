@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 
-import { Spinner, LoginRedirect, BookedTrips } from "../components";
+import { Spinner, LoginRedirect, BookedTrips, Container } from "../components";
 import { Layout } from "../components";
 import CanceledTrips from "../components/CanceledTrips";
 
@@ -29,9 +29,10 @@ class MyTrips extends Component {
 
   onTabClick = e => {
     const stateElements = ["upcoming", "past", "canceled"];
-    stateElements.map(stateElement => {
-      this.setState({ [stateElement]: false });
-    });
+    for (let element of stateElements) {
+      this.setState({ [element]: false });
+    }
+
     this.setState({ [e.target.value]: true });
   };
 
@@ -74,7 +75,7 @@ class MyTrips extends Component {
                 </button>
               </div>
               {upcoming ? (
-                <div>
+                <Container>
                   <h3>Upcoming Trips: </h3>
                   {bookedTrips.map(bookedTrip => (
                     <Link to={bookedTrip.slug} key={bookedTrip.id}>
@@ -84,7 +85,7 @@ class MyTrips extends Component {
                       />
                     </Link>
                   ))}
-                </div>
+                </Container>
               ) : null}
 
               {past ? (
@@ -95,14 +96,14 @@ class MyTrips extends Component {
               ) : null}
 
               {canceled ? (
-                <div>
+                <Container>
                   <h3>Canceled trips:</h3>
                   {canceledTrips.map(canceledTrip => (
                     <Link to={canceledTrip.slug} key={canceledTrip.id}>
                       <CanceledTrips canceledTrips={canceledTrip} />
                     </Link>
                   ))}
-                </div>
+                </Container>
               ) : null}
             </div>
           </Layout>

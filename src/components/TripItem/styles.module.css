@@ -4,7 +4,6 @@
   grid-template-rows: 1fr 4fr;
   grid-gap: 10px;
   color: black;
-  /* background-color: rgb(240, 249, 252); */
   background-color: var(--color-light);
   width: 90%;
   margin: 30px auto;
@@ -22,8 +21,8 @@
   grid-row: 1/3;
 }
 
-@media screen and (max-width: 800px){
-  .TripItem{
+@media screen and (max-width: 800px) {
+  .TripItem {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 4fr 1fr;
@@ -37,4 +36,3 @@
     text-align: center;
   }
 }
-  

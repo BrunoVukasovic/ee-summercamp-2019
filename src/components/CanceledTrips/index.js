@@ -9,7 +9,7 @@ export default class CanceledTrips extends Component {
     return (
       <TripItem>
         <img
-          src={require("../../images" + canceledTrips.slug + ".jpg")}
+          src={require("../../images/4x3" + canceledTrips.slug + ".jpg")}
           alt={canceledTrips.tripName}
           width="100%"
         />

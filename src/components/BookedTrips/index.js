@@ -9,7 +9,7 @@ export default class BookedTrips extends Component {
     return (
       <TripItem>
         <img
-          src={require("../../images" + bookedTrip.slug + ".jpg")}
+          src={require("../../images/4x3" + bookedTrip.slug + ".jpg")}
           alt={bookedTrip.tripName}
           width="100%"
         />
@@ -25,7 +25,6 @@ export default class BookedTrips extends Component {
             <br />
             <strong>Group size: </strong>
             {bookedTrip.numberOfPeople}
-            <br />
           </TripDescription>
           <button
             onClick={() => this.props.cancelTrip(bookedTrip)}
