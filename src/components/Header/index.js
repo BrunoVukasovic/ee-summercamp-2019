@@ -94,7 +94,11 @@ class Header extends Component {
                 My Trips
               </Link>
               {isAuthenticated ? (
-                <Link to="/login" className={styles.MobileLink}>
+                <Link
+                  to="/login"
+                  className={styles.MobileLink}
+                  onClick={this.onLogoutClick}
+                >
                   Log Out
                 </Link>
               ) : (

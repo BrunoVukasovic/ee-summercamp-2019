@@ -5,7 +5,7 @@ import ButtonSimple from "../ButonSimple";
 export default () => (
   <div style={{ width: "16em", margin: "auto" }}>
     <img src={gif} alt="Working..." style={{ width: "15em", margin: "auto" }} />
-    <h2 style={{ textAlign: "center" }}>Page is still under constuction!</h2>
+    <h2 style={{ textAlign: "center" }}>Page is still under construction!</h2>
     <Link to="/">
       <ButtonSimple>Home</ButtonSimple>
     </Link>

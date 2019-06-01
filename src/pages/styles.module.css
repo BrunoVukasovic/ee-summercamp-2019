@@ -67,3 +67,30 @@
   background-color: #008cba;
   color: white;
 }
+
+@media screen and (max-width: 470px) {
+  .Tab {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: var(--color-light);
+  }
+
+  .TabLinksActive {
+    background-color: white;
+    border: 3px solid #008cba;
+    color: black;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #008cba;
+    color: white;
+  }
+}

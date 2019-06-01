@@ -40,9 +40,9 @@ class Login extends Component {
           <p className={styles.Hint}>
             // HINT:
             <br />
-            // email: admin@mail.com
+            // email: <strong>summercamp@mail.com</strong>
             <br />
-            // password: password
+            // password: <strong>password</strong>
           </p>
 
           <input
